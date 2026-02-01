@@ -54,38 +54,62 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const images = getProductImages(product);
   const variations = normalizeVariations(product);
 
+  // Atelier 3D試着ウィジェット設定
+  const widgetUrl = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3001/widget.js'
+    : 'https://atelier-rho-red.vercel.app/widget.js';
+  const publicKey = process.env.NEXT_PUBLIC_ATELIER_PUBLIC_KEY || 'pub_live_030b64caa84e2995672163c125d600bd';
+
   return (
-    <div className="wrapper" style={{ marginTop: `${HEADER_MARGIN_TOP}px` }}>
-      <Header />
-      <NewsBanner />
-      <div className="pane-contents">
-        <main className="pane-main product-page-main">
-          <div className="pane-center">
-            <Breadcrumb items={breadcrumbItems} />
-            <div className="block-goods-detail">
-              <ProductImageGallery images={images} alt={product.title} />
-              <ProductPageContent
-                product={{
-                  id: product.id,
-                  brand: product.brand,
-                  title: product.title,
-                  price: product.price,
-                }}
-                variations={variations}
+    <>
+      {/* グローバル設定とwidget.jsの読み込みを1つのscriptタグで */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.__atelierWidgetConfig = { publicKey: '${publicKey}' };
+            (function() {
+              const script = document.createElement('script');
+              script.src = '${widgetUrl}';
+              script.defer = true;
+              document.head.appendChild(script);
+            })();
+          `,
+        }}
+      />
+      
+      <div className="wrapper" style={{ marginTop: `${HEADER_MARGIN_TOP}px` }}>
+        <Header />
+        <NewsBanner />
+        <div className="pane-contents">
+          <main className="pane-main product-page-main">
+            <div className="pane-center">
+              <Breadcrumb items={breadcrumbItems} />
+              <div className="block-goods-detail">
+                <ProductImageGallery images={images} alt={product.title} />
+                <ProductPageContent
+                  product={{
+                    id: product.id,
+                    brand: product.brand,
+                    title: product.title,
+                    price: product.price,
+                  }}
+                  variations={variations}
+                  publicKey={publicKey}
+                />
+              </div>
+              <ProductTabs
+                description={
+                  product.description ||
+                  `${product.title}は、${product.brand}のこだわりが詰まったアイテムです。高品質な素材と丁寧な仕上げで、長く愛用いただけます。`
+                }
+                sizeTable={product.sizeTable}
+                details={product.details}
               />
             </div>
-            <ProductTabs
-              description={
-                product.description ||
-                `${product.title}は、${product.brand}のこだわりが詰まったアイテムです。高品質な素材と丁寧な仕上げで、長く愛用いただけます。`
-              }
-              sizeTable={product.sizeTable}
-              details={product.details}
-            />
-          </div>
-        </main>
+          </main>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }

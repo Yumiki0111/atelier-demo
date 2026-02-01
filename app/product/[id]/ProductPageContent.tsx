@@ -4,7 +4,6 @@ import { useState } from 'react';
 import ProductInfo from '../../components/ProductInfo';
 import ProductVariation from '../../components/ProductVariation';
 import ProductActions from '../../components/ProductActions';
-import AtelierWidget from '../../components/AtelierWidget';
 
 interface ProductPageContentProps {
   product: {
@@ -22,9 +21,10 @@ interface ProductPageContentProps {
       productId: string;
     }>;
   }>;
+  publicKey: string;
 }
 
-export default function ProductPageContent({ product, variations }: ProductPageContentProps) {
+export default function ProductPageContent({ product, variations, publicKey }: ProductPageContentProps) {
   const [selectedColor, setSelectedColor] = useState(variations[0]?.color || '');
 
   return (
@@ -36,15 +36,17 @@ export default function ProductPageContent({ product, variations }: ProductPageC
           price={product.price}
         />
 
-        {/* Atelier 3D試着ウィジェット */}
-        <div style={{ margin: '20px 0', padding: '20px', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
-          <AtelierWidget productId={product.id} />
-        </div>
-
         <ProductVariation
           variations={variations}
           productId={product.id}
           onColorChange={setSelectedColor}
+        />
+
+        {/* 3D試着ウィジェット要素 - カートに入れるボタンの上に配置 */}
+        <div
+          data-atelier-public-key={publicKey}
+          data-atelier-external-product-id={product.id}
+          suppressHydrationWarning
         />
 
         <ProductActions

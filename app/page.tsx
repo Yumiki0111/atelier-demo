@@ -3,14 +3,15 @@ import ProductList from './components/ProductList';
 import { getAllProducts } from '@/lib/data/products';
 
 interface HomeProps {
-  searchParams: {
+  searchParams: Promise<{
     q?: string;
-  };
+  }>;
 }
 
-export default function Home({ searchParams }: HomeProps) {
+export default async function Home({ searchParams }: HomeProps) {
   const allProducts = getAllProducts();
-  const query = searchParams.q || '';
+  const params = await searchParams;
+  const query = params.q || '';
   
   const products = query
     ? allProducts.filter(
