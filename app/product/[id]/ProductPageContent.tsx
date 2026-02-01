@@ -4,6 +4,7 @@ import { useState } from 'react';
 import ProductInfo from '../../components/ProductInfo';
 import ProductVariation from '../../components/ProductVariation';
 import ProductActions from '../../components/ProductActions';
+import AtelierWidget from '../../components/AtelierWidget';
 
 interface ProductPageContentProps {
   product: {
@@ -34,6 +35,11 @@ export default function ProductPageContent({ product, variations }: ProductPageC
           title={product.title}
           price={product.price}
         />
+
+        {/* Atelier 3D試着ウィジェット */}
+        <div style={{ margin: '20px 0', padding: '20px', border: '1px solid #e0e0e0', borderRadius: '8px' }}>
+          <AtelierWidget productId={product.id} />
+        </div>
 
         <ProductVariation
           variations={variations}
