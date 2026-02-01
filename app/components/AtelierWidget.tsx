@@ -25,7 +25,7 @@ export default function AtelierWidget({
     : 'https://atelier-rho-red.vercel.app/widget.js';
   const defaultApiUrl = isDevelopment
     ? 'http://localhost:3001'
-    : undefined;
+    : 'https://atelier-rho-red.vercel.app';
 
   const finalWidgetUrl = widgetUrl || process.env.NEXT_PUBLIC_ATELIER_WIDGET_URL || defaultWidgetUrl;
   const finalApiUrl = apiUrl || process.env.NEXT_PUBLIC_ATELIER_API_URL || defaultApiUrl;
