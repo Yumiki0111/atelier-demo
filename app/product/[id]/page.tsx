@@ -56,7 +56,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   // Atelier 3D試着ウィジェット設定
   const widgetUrl = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3001/widget.js'
+    ? 'http://localhost:3000/widget.js'
     : 'https://atelier-rho-red.vercel.app/widget.js';
   const publicKey = process.env.NEXT_PUBLIC_ATELIER_PUBLIC_KEY || 'pub_live_030b64caa84e2995672163c125d600bd';
 
