@@ -58,6 +58,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const widgetUrl = process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000/widget.js'
     : 'https://atelier-rho-red.vercel.app/widget.js';
+  const apiUrl = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://atelier-rho-red.vercel.app';
   const publicKey = process.env.NEXT_PUBLIC_ATELIER_PUBLIC_KEY || 'pub_live_030b64caa84e2995672163c125d600bd';
 
   return (
@@ -66,7 +69,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            window.__atelierWidgetConfig = { publicKey: '${publicKey}' };
+            window.__atelierWidgetConfig = { 
+              publicKey: '${publicKey}',
+              apiUrl: '${apiUrl}'
+            };
             (function() {
               const script = document.createElement('script');
               script.src = '${widgetUrl}';
@@ -95,6 +101,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   }}
                   variations={variations}
                   publicKey={publicKey}
+                  apiUrl={apiUrl}
                 />
               </div>
               <ProductTabs

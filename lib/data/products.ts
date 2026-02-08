@@ -3,6 +3,53 @@ import { Product } from '../types';
 // 商品データ（1画像1商品）
 export const products: Product[] = [
   {
+    id: 'g1770489191',
+    title: 'MODS COAT',
+    brand: 'Atelier',
+    price: '￥95,000',
+    image: '/clothes/moz_coat.jpg',
+    href: '/product/g1770489191',
+    categoryId: 'outer',
+    categoryName: 'アウター',
+    images: [
+      '/clothes/moz_coat.jpg',
+    ],
+    colors: [
+      {
+        name: 'NAVY',
+        image: '/clothes/moz_coat.jpg',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g1770489191' },
+          { size: 'L', inStock: true, productId: 'g1770489191' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      ネイビーカラーのモッズコート。クラシックなモッズスタイルを現代的な解釈で表現したコートです。<br>
+      ウール混紡素材で、保温性とスタイリッシュなシルエットを両立しています。<br>
+      <br>
+      <b>特徴</b><br>
+      • ネイビーの上品なカラーリング<br>
+      • モッズスタイルのクラシックなデザイン<br>
+      • ウール混紡で快適な着心地
+    `,
+    sizeTable: {
+      headers: ['サイズ', '着丈', '肩幅', '身幅', '袖丈'],
+      rows: [
+        { size: 'M', measurements: ['85', '50', '60', '65'] },
+        { size: 'L', measurements: ['87', '52', '62', '66'] },
+      ],
+    },
+    details: {
+      material: 'ウール混紡',
+      origin: '日本',
+      care: 'ドライクリーニング',
+      code: '1770489191',
+    },
+    isNew: true,
+  },
+  {
     id: 'g115651016134',
     title: 'DOUBLE JACKET',
     brand: 'Atelier',

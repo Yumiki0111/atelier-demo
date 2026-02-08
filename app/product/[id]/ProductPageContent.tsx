@@ -22,9 +22,10 @@ interface ProductPageContentProps {
     }>;
   }>;
   publicKey: string;
+  apiUrl: string;
 }
 
-export default function ProductPageContent({ product, variations, publicKey }: ProductPageContentProps) {
+export default function ProductPageContent({ product, variations, publicKey, apiUrl }: ProductPageContentProps) {
   const [selectedColor, setSelectedColor] = useState(variations[0]?.color || '');
 
   return (
@@ -44,8 +45,10 @@ export default function ProductPageContent({ product, variations, publicKey }: P
 
         {/* 3D試着ウィジェット要素 - カートに入れるボタンの上に配置 */}
         <div
+          className="atelier-widget-container"
           data-atelier-public-key={publicKey}
           data-atelier-external-product-id={product.id}
+          data-atelier-api-url={apiUrl}
           suppressHydrationWarning
         />
 
