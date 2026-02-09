@@ -13,6 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || 
+    (process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://atelier-rho-red.vercel.app')
+  ),
   title: "Atelier - メンズモノトーンアパレル",
   description: "Atelierの公式通販サイト。メンズ向けのモノトーンを基調とした洗練されたアパレルアイテムを多数取り揃えています。",
 };

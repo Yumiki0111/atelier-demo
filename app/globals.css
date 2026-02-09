@@ -1388,6 +1388,303 @@ body {
   margin-top: 8px;
 }
 
+/* Atelier Widget Container */
+.atelier-widget-container {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  margin: 20px 0;
+}
+
+/* ウィジェット内の右側のボタンを非表示（テスト用） */
+.atelier-widget-container button:has(svg),
+.atelier-widget-container button:has(img),
+.atelier-widget-container [role="button"]:has(svg),
+.atelier-widget-container [role="button"]:has(img) {
+  /* 右側のアイコンボタンを非表示にする場合は、以下のコメントを外す */
+  /* display: none !important; */
+  /* visibility: hidden !important; */
+  /* opacity: 0 !important; */
+  /* pointer-events: none !important; */
+}
+
+/* ウィジェット右上の×ボタンを常に非表示（モーダル開閉に関係なく） */
+/* より確実に適用するため、複数のセレクタパターンを使用 */
+.atelier-widget-container button[aria-label*="close" i],
+.atelier-widget-container button[aria-label*="Close" i],
+.atelier-widget-container button[aria-label*="CLOSE" i],
+.atelier-widget-container button[aria-label*="閉じる"],
+.atelier-widget-container button:has(svg path[d*="M18 6L6 18"]),
+.atelier-widget-container button:has(svg path[d*="M6 6l12 12"]),
+.atelier-widget-container button:has(svg path[d*="M19 6.41"]),
+.atelier-widget-container button:has(svg path[d*="M6 18L18 6"]) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* iframe内の×ボタンも非表示（iframeに直接アクセスできない場合の対策） */
+.atelier-widget-container iframe {
+  pointer-events: auto;
+}
+
+/* ウィジェット内の右上エリア（右上20%×20%）にあるボタンを非表示 */
+.atelier-widget-container {
+  position: relative;
+  overflow: visible;
+}
+
+/* より積極的に右上のボタンを非表示（必要に応じて追加） */
+
+.atelier-widget-container.widget-minimized {
+  pointer-events: none;
+}
+
+/* Widget Minimized State */
+.widget-minimized {
+  pointer-events: none;
+}
+
+/* Outfit Change Modal */
+.outfit-change-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(2px);
+}
+
+.outfit-change-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ページ全体を縮小 */
+body.modal-open {
+  overflow: hidden;
+}
+
+.page-minimized {
+  position: fixed !important;
+  width: var(--minimized-width, 97.5px) !important;
+  height: var(--minimized-height, 594.314px) !important;
+  max-width: none !important;
+  max-height: none !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box !important;
+}
+
+.outfit-change-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-radius: 20px 20px 0 0;
+  z-index: 10000;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.outfit-change-modal.is-open {
+  transform: translateY(0);
+}
+
+
+.outfit-change-modal-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--gray-300);
+  border-radius: 2px;
+  margin: 12px auto 0;
+  cursor: grab;
+  flex-shrink: 0;
+}
+
+.outfit-change-modal-handle:active {
+  cursor: grabbing;
+}
+
+.outfit-change-modal-back {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  z-index: 10001;
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.outfit-change-modal-back:hover {
+  background-color: var(--gray-100);
+}
+
+.outfit-change-modal-back-icon {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.outfit-change-modal-back-text {
+  line-height: 1;
+}
+
+.outfit-change-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  -webkit-overflow-scrolling: touch;
+  background: var(--white);
+}
+
+.outfit-change-category {
+  margin-bottom: 24px;
+}
+
+.outfit-change-category:last-child {
+  margin-bottom: 0;
+}
+
+.outfit-change-category-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+  padding: 0 4px;
+}
+
+.outfit-change-product-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-300) transparent;
+}
+
+.outfit-change-product-list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.outfit-change-product-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.outfit-change-product-list::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 2px;
+}
+
+.outfit-change-product-item {
+  flex-shrink: 0;
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.outfit-change-product-item:active {
+  transform: scale(0.95);
+}
+
+.outfit-change-product-image {
+  width: 100px;
+  height: 133px;
+  background: var(--gray-100);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outfit-change-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.outfit-change-product-title {
+  font-size: 11px;
+  color: var(--black);
+  line-height: 1.3;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: 0 2px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .outfit-change-modal {
+    max-height: 90vh;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .outfit-change-modal-body {
+    padding: 16px 12px;
+  }
+
+  .outfit-change-category {
+    margin-bottom: 20px;
+  }
+
+  .outfit-change-category-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .outfit-change-product-item {
+    width: 90px;
+  }
+
+  .outfit-change-product-image {
+    width: 90px;
+    height: 120px;
+  }
+
+  .outfit-change-product-title {
+    font-size: 10px;
+  }
+}
+
 /* Search Box */
 .block-search-box {
   margin-bottom: 30px;

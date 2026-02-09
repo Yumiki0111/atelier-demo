@@ -43,7 +43,7 @@ export default function ProductPageContent({ product, variations, publicKey, api
           onColorChange={setSelectedColor}
         />
 
-        {/* 3D試着ウィジェット要素 - カートに入れるボタンの上に配置 */}
+        {/* 3D試着ウィジェット */}
         <div
           className="atelier-widget-container"
           data-atelier-public-key={publicKey}
