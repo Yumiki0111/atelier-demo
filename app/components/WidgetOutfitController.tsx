@@ -31,7 +31,7 @@ export default function WidgetOutfitController({
     const widgetUrl = (window as any).__atelierWidgetConfig?.widgetUrl || 
                      (process.env.NODE_ENV === 'development' 
                        ? 'http://localhost:3000/widget.js' 
-                       : 'https://atelier-rho-red.vercel.app/widget.js');
+                       : 'https://atelier-console.vercel.app/widget.js');
     script.src = widgetUrl;
     script.defer = true;
     document.head.appendChild(script);
