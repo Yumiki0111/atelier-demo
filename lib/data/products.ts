@@ -3,6 +3,53 @@ import { Product } from '../types';
 // 商品データ（1画像1商品）
 export const products: Product[] = [
   {
+    id: 'g1771040664',
+    title: 'RETHER JACKET',
+    brand: 'Atelier',
+    price: '￥82,000',
+    image: '/clothes/rether_jacket.jpg',
+    href: '/product/g1771040664',
+    categoryId: 'outer',
+    categoryName: 'アウター',
+    images: [
+      '/clothes/rether_jacket.jpg',
+    ],
+    colors: [
+      {
+        name: 'BLACK',
+        image: '/clothes/rether_jacket.jpg',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g1771040664' },
+          { size: 'L', inStock: true, productId: 'g1771040664' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      ブラックカラーのレザージャケット。クラシックなデザインに現代的なテイストを加えたジャケットです。<br>
+      上質なレザー素材で、耐久性とスタイリッシュなシルエットを両立しています。<br>
+      <br>
+      <b>特徴</b><br>
+      • ブラックのモノトーンカラー<br>
+      • レザー素材で高級感のある仕上がり<br>
+      • クラシックなデザインで長く愛用可能
+    `,
+    sizeTable: {
+      headers: ['サイズ', '着丈', '肩幅', '身幅', '袖丈'],
+      rows: [
+        { size: 'M', measurements: ['75', '47', '55', '62'] },
+        { size: 'L', measurements: ['77', '49', '57', '63'] },
+      ],
+    },
+    details: {
+      material: 'レザー',
+      origin: '日本',
+      care: 'ドライクリーニング',
+      code: '1771040664',
+    },
+    isNew: true,
+  },
+  {
     id: 'g1770489191',
     title: 'MODS COAT',
     brand: 'Atelier',

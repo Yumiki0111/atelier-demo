@@ -1030,7 +1030,7 @@ body {
 
 /* カートに入れるボタン */
 .product-add-to-cart-button {
-  margin: 20px 0;
+  margin: 10px 0 20px 0;
 }
 
 .btn-add-cart-main {
@@ -1391,9 +1391,7 @@ body {
 /* Atelier Widget Container */
 .atelier-widget-container {
   position: relative;
-  width: 100%;
-  min-height: 400px;
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
 }
 
 /* ウィジェット内の右側のボタンを非表示（テスト用） */
@@ -1478,12 +1476,6 @@ body.modal-open {
 
 .page-minimized {
   position: fixed !important;
-  width: var(--minimized-width, 97.5px) !important;
-  height: var(--minimized-height, 594.314px) !important;
-  max-width: none !important;
-  max-height: none !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
