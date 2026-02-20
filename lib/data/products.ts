@@ -472,6 +472,382 @@ export const products: Product[] = [
     },
     isNew: true,
   },
+  {
+    id: 'g177200100001',
+    title: 'CARGO PANTS',
+    brand: 'Atelier',
+    price: '￥45,000',
+    image: '/clothes/cargo_pants.png',
+    href: '/product/g177200100001',
+    categoryId: 'pants',
+    categoryName: 'パンツ',
+    images: [
+      '/clothes/cargo_pants.png',
+    ],
+    colors: [
+      {
+        name: 'BLACK',
+        image: '/clothes/cargo_pants.png',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g177200100001' },
+          { size: 'L', inStock: true, productId: 'g177200100001' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      ブラックカラーのカーゴパンツ。機能的なポケットデザインが特徴のカジュアルパンツです。<br>
+      ストレッチ素材を使用し、動きやすさとスタイリッシュなシルエットを両立しています。<br>
+      <br>
+      <b>特徴</b><br>
+      • ブラックのモノトーンカラー<br>
+      • 機能的なカーゴポケット<br>
+      • ストレッチ素材で快適な着心地
+    `,
+    sizeTable: {
+      headers: ['サイズ', 'ウエスト', '股上', '股下', '裾幅'],
+      rows: [
+        { size: 'M', measurements: ['78', '32', '92', '24'] },
+        { size: 'L', measurements: ['82', '34', '94', '25'] },
+      ],
+    },
+    details: {
+      material: 'コットン混紡',
+      origin: '日本',
+      care: '洗濯可',
+      code: '177200100001',
+    },
+    isNew: true,
+  },
+  {
+    id: 'g177200100002',
+    title: 'LONG DOWN COAT',
+    brand: 'Atelier',
+    price: '￥128,000',
+    image: '/clothes/long_down_coat.png',
+    href: '/product/g177200100002',
+    categoryId: 'outer',
+    categoryName: 'アウター',
+    images: [
+      '/clothes/long_down_coat.png',
+    ],
+    colors: [
+      {
+        name: 'BLACK',
+        image: '/clothes/long_down_coat.png',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g177200100002' },
+          { size: 'L', inStock: true, productId: 'g177200100002' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      ブラックカラーのロングダウンコート。防寒性に優れたロング丈のダウンコートです。<br>
+      高品質なダウン素材を使用し、厳しい寒さにも対応できる保温性を実現しています。<br>
+      <br>
+      <b>特徴</b><br>
+      • ブラックのモノトーンカラー<br>
+      • ロング丈で防寒性抜群<br>
+      • 高品質ダウン素材で快適な保温性
+    `,
+    sizeTable: {
+      headers: ['サイズ', '着丈', '肩幅', '身幅', '袖丈'],
+      rows: [
+        { size: 'M', measurements: ['110', '52', '62', '68'] },
+        { size: 'L', measurements: ['112', '54', '64', '69'] },
+      ],
+    },
+    details: {
+      material: 'ナイロン、ダウン',
+      origin: '日本',
+      care: '洗濯可',
+      code: '177200100002',
+    },
+    isNew: true,
+  },
+  {
+    id: 'g177200100003',
+    title: 'CARDIGAN',
+    brand: 'Atelier',
+    price: '￥58,000',
+    image: '/clothes/cardigan.png',
+    href: '/product/g177200100003',
+    categoryId: 'outer',
+    categoryName: 'アウター',
+    images: [
+      '/clothes/cardigan.png',
+    ],
+    colors: [
+      {
+        name: 'GRAY',
+        image: '/clothes/cardigan.png',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g177200100003' },
+          { size: 'L', inStock: true, productId: 'g177200100003' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      グレーカラーのカーディガン。クラシックなVネックデザインのカーディガンです。<br>
+      ウール混紡素材で、保温性と通気性に優れ、季節の変わり目に最適です。<br>
+      <br>
+      <b>特徴</b><br>
+      • グレーの落ち着いたカラーリング<br>
+      • Vネックデザインでスタイリッシュに<br>
+      • ウール混紡で快適な着心地
+    `,
+    sizeTable: {
+      headers: ['サイズ', '着丈', '肩幅', '身幅', '袖丈'],
+      rows: [
+        { size: 'M', measurements: ['68', '46', '54', '60'] },
+        { size: 'L', measurements: ['70', '48', '56', '61'] },
+      ],
+    },
+    details: {
+      material: 'ウール混紡',
+      origin: '日本',
+      care: 'ドライクリーニング',
+      code: '177200100003',
+    },
+    isNew: true,
+  },
+  {
+    id: 'g177200100004',
+    title: 'SWEAT',
+    brand: 'Atelier',
+    price: '￥28,000',
+    image: '/clothes/sweat.png',
+    href: '/product/g177200100004',
+    categoryId: 'tops',
+    categoryName: 'トップス',
+    images: [
+      '/clothes/sweat.png',
+    ],
+    colors: [
+      {
+        name: 'BLACK',
+        image: '/clothes/sweat.png',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g177200100004' },
+          { size: 'L', inStock: true, productId: 'g177200100004' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      ブラックカラーのスウェット。シンプルで着心地の良いスウェットシャツです。<br>
+      コットン混紡素材で、柔らかく快適な着心地を実現しています。<br>
+      <br>
+      <b>特徴</b><br>
+      • ブラックのモノトーンカラー<br>
+      • コットン混紡で快適な着心地<br>
+      • カジュアルスタイルに最適
+    `,
+    sizeTable: {
+      headers: ['サイズ', '着丈', '肩幅', '身幅', '袖丈'],
+      rows: [
+        { size: 'M', measurements: ['68', '48', '56', '62'] },
+        { size: 'L', measurements: ['70', '50', '58', '63'] },
+      ],
+    },
+    details: {
+      material: 'コットン混紡',
+      origin: '日本',
+      care: '洗濯可',
+      code: '177200100004',
+    },
+    isNew: true,
+  },
+  {
+    id: 'g177200100005',
+    title: 'WIDE PANTS',
+    brand: 'Atelier',
+    price: '￥42,000',
+    image: '/clothes/wide_pants.png',
+    href: '/product/g177200100005',
+    categoryId: 'pants',
+    categoryName: 'パンツ',
+    images: [
+      '/clothes/wide_pants.png',
+    ],
+    colors: [
+      {
+        name: 'BLACK',
+        image: '/clothes/wide_pants.png',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g177200100005' },
+          { size: 'L', inStock: true, productId: 'g177200100005' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      ブラックカラーのワイドパンツ。ゆったりとしたシルエットが特徴のパンツです。<br>
+      ストレッチ素材を使用し、動きやすさとスタイリッシュなシルエットを両立しています。<br>
+      <br>
+      <b>特徴</b><br>
+      • ブラックのモノトーンカラー<br>
+      • ワイドシルエットでスタイリッシュに<br>
+      • ストレッチ素材で快適な着心地
+    `,
+    sizeTable: {
+      headers: ['サイズ', 'ウエスト', '股上', '股下', '裾幅'],
+      rows: [
+        { size: 'M', measurements: ['76', '30', '90', '28'] },
+        { size: 'L', measurements: ['80', '32', '92', '29'] },
+      ],
+    },
+    details: {
+      material: 'コットン混紡',
+      origin: '日本',
+      care: '洗濯可',
+      code: '177200100005',
+    },
+    isNew: true,
+  },
+  {
+    id: 'g177200100006',
+    title: 'DOUBLE COAT',
+    brand: 'Atelier',
+    price: '￥98,000',
+    image: '/clothes/double_coat.png',
+    href: '/product/g177200100006',
+    categoryId: 'outer',
+    categoryName: 'アウター',
+    images: [
+      '/clothes/double_coat.png',
+    ],
+    colors: [
+      {
+        name: 'NAVY',
+        image: '/clothes/double_coat.png',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g177200100006' },
+          { size: 'L', inStock: true, productId: 'g177200100006' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      ネイビーカラーのダブルコート。クラシックなダブルブレストデザインのコートです。<br>
+      ウール混紡素材で、保温性とスタイリッシュなシルエットを両立しています。<br>
+      <br>
+      <b>特徴</b><br>
+      • ネイビーの上品なカラーリング<br>
+      • ダブルブレストデザインでスタイリッシュに<br>
+      • ウール混紡で快適な着心地
+    `,
+    sizeTable: {
+      headers: ['サイズ', '着丈', '肩幅', '身幅', '袖丈'],
+      rows: [
+        { size: 'M', measurements: ['95', '50', '60', '66'] },
+        { size: 'L', measurements: ['97', '52', '62', '67'] },
+      ],
+    },
+    details: {
+      material: 'ウール混紡',
+      origin: '日本',
+      care: 'ドライクリーニング',
+      code: '177200100006',
+    },
+    isNew: true,
+  },
+  {
+    id: 'g177200100007',
+    title: 'BOMBER JACKET',
+    brand: 'Atelier',
+    price: '￥72,000',
+    image: '/clothes/bomber_jacket.png',
+    href: '/product/g177200100007',
+    categoryId: 'outer',
+    categoryName: 'アウター',
+    images: [
+      '/clothes/bomber_jacket.png',
+    ],
+    colors: [
+      {
+        name: 'BLACK',
+        image: '/clothes/bomber_jacket.png',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g177200100007' },
+          { size: 'L', inStock: true, productId: 'g177200100007' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      ブラックカラーのボンバージャケット。クラシックなボンバージャケットデザインです。<br>
+      ナイロン素材で、軽量で防風性に優れ、カジュアルスタイルに最適です。<br>
+      <br>
+      <b>特徴</b><br>
+      • ブラックのモノトーンカラー<br>
+      • クラシックなボンバージャケットデザイン<br>
+      • ナイロン素材で軽量で快適
+    `,
+    sizeTable: {
+      headers: ['サイズ', '着丈', '肩幅', '身幅', '袖丈'],
+      rows: [
+        { size: 'M', measurements: ['65', '48', '56', '61'] },
+        { size: 'L', measurements: ['67', '50', '58', '62'] },
+      ],
+    },
+    details: {
+      material: 'ナイロン',
+      origin: '日本',
+      care: '洗濯可',
+      code: '177200100007',
+    },
+    isNew: true,
+  },
+  {
+    id: 'g177200100008',
+    title: 'PANTS',
+    brand: 'Atelier',
+    price: '￥35,000',
+    image: '/clothes/pants.png',
+    href: '/product/g177200100008',
+    categoryId: 'pants',
+    categoryName: 'パンツ',
+    images: [
+      '/clothes/pants.png',
+    ],
+    colors: [
+      {
+        name: 'BLACK',
+        image: '/clothes/pants.png',
+        sizes: [
+          { size: 'M', inStock: true, productId: 'g177200100008' },
+          { size: 'L', inStock: true, productId: 'g177200100008' },
+        ],
+      },
+    ],
+    description: `
+      <b>デザイン</b><br>
+      ブラックカラーのパンツ。シンプルでスタイリッシュなストレートシルエットのパンツです。<br>
+      コットン混紡素材で、快適な着心地と適度なストレッチ性を実現しています。<br>
+      <br>
+      <b>特徴</b><br>
+      • ブラックのモノトーンカラー<br>
+      • ストレートシルエットでスタイリッシュに<br>
+      • コットン混紡で快適な着心地
+    `,
+    sizeTable: {
+      headers: ['サイズ', 'ウエスト', '股上', '股下', '裾幅'],
+      rows: [
+        { size: 'M', measurements: ['76', '30', '90', '22'] },
+        { size: 'L', measurements: ['80', '32', '92', '23'] },
+      ],
+    },
+    details: {
+      material: 'コットン混紡',
+      origin: '日本',
+      care: '洗濯可',
+      code: '177200100008',
+    },
+    isNew: true,
+  },
 ];
 
 // 商品をIDで検索
